@@ -1,4 +1,5 @@
 import React, {createElement, useState} from 'react';
+import { GrammarlyEditorPlugin } from "@grammarly/editor-sdk-react";
 
 export default function TextForm(props) {
     
@@ -27,7 +28,9 @@ export default function TextForm(props) {
                 <h1>{props.heading}</h1>
                 <div className="mb-3">
                     {/* <label htmlFor = "myBox" className="form-label">Example of text</label> */}
-                    <textarea className="form-control" value = {text} onChange = {handleOnChange} id="myBox" cols="30" rows="10"></textarea>
+                    <GrammarlyEditorPlugin clientId="client_N7kiYdtdh1ocS8RQSm8SA2"> //USING MY OWN CLIENT ID Please use your own for data analysis in dashboard in grammarly api
+                    <textarea className="form-control" value = {text} onChange = {handleOnChange} id="myBox" cols="30" rows="10"/>
+                    </GrammarlyEditorPlugin>
                 </div>
                 <button className="btn btn-primary" onClick={handleUpClick}>Covert to uppercase</button>
                 &nbsp;
